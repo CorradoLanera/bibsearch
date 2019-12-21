@@ -1,0 +1,24 @@
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+
+language: R
+cache: packages
+
+os:
+ - linux
+ - osx
+
+r:
+ - 3.2
+ - 3.3
+ - 3.4
+ - oldrel
+
+# - osx for devel have issues to install devtools
+# - after success on the release version, run coverage checks
+matrix:
+ include:
+ - r: devel
+   os: linux
+ - r: release
+   after_success:
+    - Rscript -e 'covr::codecov()'
