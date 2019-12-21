@@ -1,12 +1,14 @@
 Package: bibsearch
-Title: What the Package Does (One Line, Title Case)
+Title: Facilitate Programmatically Creation of Shareable Files of Bibliographic Searches Results
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Corrado",
            family = "Lanera",
            role = c("aut", "cre"),
            email = "corrado.lanera@gmail.com")
-Description: What the package does (one paragraph).
+Description: Provide simple to use wrappers to API of multiple
+    bibliographic search engines and database (e.g., Scopus, PubMed),
+    with the specific aim of create shareable files (e.g., bibTeX, RIS).  
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
