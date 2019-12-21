@@ -1,7 +1,7 @@
 Package: bibsearch
 Title: Facilitate Programmatically Creation of Shareable Files
     of Bibliographic Searches Results
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Authors@R: 
     person(given = "Corrado",
            family = "Lanera",
