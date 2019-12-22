@@ -1,22 +1,25 @@
 Package: bibsearch
-Title: Facilitate Programmatically Creation of Shareable Files
-    of Bibliographic Searches Results
+Title: Facilitate Programmatically Creation of Shareable Files of
+    Bibliographic Searches Results
 Version: 0.0.0.9001
 Authors@R: 
-    person(given = "Corrado",
-           family = "Lanera",
-           role = c("aut", "cre"),
-           email = "corrado.lanera@gmail.com")
+    person(
+        given  = "Corrado",
+        family = "Lanera",
+        role   = c("aut", "cre"),
+        email  = "corrado.lanera@gmail.com"
+    )
 Description: Provide simple to use wrappers to API of multiple
-    bibliographic search engines and database (e.g., Scopus, PubMed), with
-    the specific aim of create shareable files (e.g., bibTeX, RIS).
+    bibliographic search engines and database (e.g., Scopus, PubMed),
+    with the specific aim of create shareable files (e.g., bibTeX, RIS).
 License: GPL-3
 URL: https://github.com/CorradoLanera/bibsearch
 BugReports: https://github.com/CorradoLanera/bibsearch/issues
 Depends: 
     R (>= 3.2)
 Imports: 
-    magrittr (>= 1.5)
+    magrittr (>= 1.5),
+    usethis
 Suggests: 
     covr (>= 3.4.0),
     spelling (>= 2.1),

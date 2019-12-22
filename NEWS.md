@@ -1,3 +1,5 @@
+* Added support for usethis' UI
+
 # bibsearch (development version)
 
 * Added basic development support:

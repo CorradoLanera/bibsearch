@@ -4,11 +4,12 @@
 \name{bibsearch-package}
 \alias{bibsearch}
 \alias{bibsearch-package}
-\title{bibsearch: Facilitate Programmatically Creation of Shareable Files of Bibliographic Searches Results}
+\title{bibsearch: Facilitate Programmatically Creation of Shareable Files
+    of Bibliographic Searches Results}
 \description{
 Provide simple to use wrappers to API of multiple
-    bibliographic search engines and database (e.g., Scopus, PubMed),
-    with the specific aim of create shareable files (e.g., bibTeX, RIS).
+    bibliographic search engines and database (e.g., Scopus, PubMed), with
+    the specific aim of create shareable files (e.g., bibTeX, RIS).
 }
 \seealso{
 Useful links:
