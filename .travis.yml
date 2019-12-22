@@ -5,30 +5,30 @@ cache: packages
 
 matrix:
  include:
- - r: devel
-   os: linux
-   before_install:
-    - sudo apt-get install libgsl0-dev libxml2-dev openjdk-7-*
+  - r: devel
+    os: linux
+    before_install:
+     - sudo apt-get install libgsl0-dev libxml2-dev openjdk-7-*
 
- - r: devel
-   os: osx
+  - r: devel
+    os: osx
 
- - r: release
-   os: osx
+  - r: release
+    os: osx
 
- - r: release
-   os: linux
-   before_install:
-    - sudo apt-get install libgsl0-dev libxml2-dev openjdk-7-*
-   after_success:
-    - Rscript -e 'covr::codecov()'
-
-  - r: oldrel
-   os: osx
+  - r: release
+    os: linux
+    before_install:
+     - sudo apt-get install libgsl0-dev libxml2-dev openjdk-7-*
+    after_success:
+     - Rscript -e 'covr::codecov()'
 
   - r: oldrel
-   before_install:
-    - sudo apt-get install libgsl0-dev libxml2-dev openjdk-7-*
+    os: osx
+
+  - r: oldrel
+    before_install:
+     - sudo apt-get install libgsl0-dev libxml2-dev openjdk-7-*
 
 # system requirements for rJava and topicmodels packages
 # http://stackoverflow.com/questions/16438073/unable-to-install-rjava-in-r-3-0-in-ubuntu-13-04?rq=1
