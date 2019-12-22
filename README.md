@@ -38,7 +38,9 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(bibsearch)
-## basic example code
+
+search_on_pubmed("(machine learning) AND lanera[Author]") %>% 
+    write_bibliography()
 ```
 
 ## Code of Conduct
