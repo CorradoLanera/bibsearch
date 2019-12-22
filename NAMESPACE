@@ -2,6 +2,7 @@
 
 export("%>%")
 export(search_on_pubmed)
+export(search_on_scopus)
 export(write_bibliography)
 importFrom(magrittr,"%>%")
 importFrom(usethis,ui_code)

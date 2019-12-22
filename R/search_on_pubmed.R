@@ -9,13 +9,13 @@
 #' @param search_string (character vector of length 1) that is used for
 #'   querying PubMed (standard PubMed syntax, see reference for
 #'   details).
-#' @param batch_size Integer (>= 1): size of the batch of PubMed records
-#'   to be retrieved at one time.
 #' @param max_to_get Integer (>= 1): maximum number of records to
 #'   retrieve. Note that, if they are not finished, a complete batch
 #'   will be always retrieved; hence, more than `max_to_get` records
 #'   will be retrieved Set it to `Inf` to be sure to retrieve all
 #'   the possible results.
+#' @param batch_size Integer (>= 1): size of the batch of PubMed records
+#'   to be retrieved at one time.
 #' @param api_key (character vector of length 1): user-specific API key
 #'   to increase the limit of queries per second above three. You can
 #'   obtain your key from NCBI (see
