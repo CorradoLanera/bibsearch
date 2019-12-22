@@ -16,14 +16,14 @@ BugReports: https://github.com/CorradoLanera/bibsearch/issues
 Depends: 
     R (>= 3.2)
 Imports: 
-    depigner,
     easyPubMed,
     fs,
     magrittr (>= 1.5),
     purrr,
     usethis,
     revtools,
-    assertive
+    assertive,
+    progress
 Suggests: 
     covr (>= 3.4.0),
     spelling (>= 2.1),

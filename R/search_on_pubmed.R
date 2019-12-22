@@ -95,7 +95,7 @@ search_on_pubmed <- function(
     safe_retrieve <- purrr::safely(easyPubMed::fetch_pubmed_data)
 
 
-    pb <- depigner::pb_len(length(steps))
+    pb <- pb_len(length(steps))
     retrived_lists <- purrr::imap(steps, ~ {
         res <- safe_retrieve(
             entrez_ids,
@@ -103,7 +103,7 @@ search_on_pubmed <- function(
             retmax = batch_size,
             format = "medline"
         )
-        depigner::tick(pb, .y)
+        tick(pb, .y)
         res
     }) %>%
         purrr::transpose()
@@ -123,7 +123,7 @@ search_on_pubmed <- function(
     delimiter <- revtools:::detect_delimiter(test_results)
 
     ui_todo("Set-up bibliography")
-    pb <- depigner::pb_len(length(results))
+    pb <- pb_len(length(results))
     bibliograpy <- purrr::imap(results, ~{
 
         res <- revtools:::prep_ris(.x, delimiter) %>%
@@ -133,7 +133,7 @@ search_on_pubmed <- function(
             if ("type" %in% nm) .x else c(type = "JOUR", .x)
         })
 
-        depigner::tick(pb, .y)
+        tick(pb, .y)
         res
     })
     ui_done("Bibliography ready")
