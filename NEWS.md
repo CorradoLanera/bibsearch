@@ -1,3 +1,5 @@
+# bibsearch 0.1.0
+
 * Removed teh dependency from the package **depigner** (because it is
   on GitHub only);
 
