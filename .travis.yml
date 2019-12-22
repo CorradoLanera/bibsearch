@@ -8,9 +8,6 @@ os:
  - osx
 
 r:
- - 3.2
- - 3.3
- - 3.4
  - oldrel
 
 # - osx for devel have issues to install devtools

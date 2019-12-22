@@ -1,3 +1,6 @@
+* Removed teh dependency from the package **depigner** (because it is
+  on GitHub only);
+
 * Added `write_bibliography()` to write a bibliography on disk, with
   options to split the file accordingly to the number of references into
   each one;
