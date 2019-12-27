@@ -2,7 +2,6 @@
 
 language: R
 cache: packages
-env: R_REMOTES_NO_ERRORS_FROM_WARNINGS = "true"
 
 
 matrix:
@@ -11,9 +10,6 @@ matrix:
     os: linux
     before_install:
      - sudo apt-get install libgsl0-dev libxml2-dev openjdk-7-*
-
-  - r: devel
-    os: osx
 
   - r: release
     os: osx
