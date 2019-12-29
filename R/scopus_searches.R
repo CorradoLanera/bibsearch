@@ -1,4 +1,4 @@
-#' Complete Scopus search
+#' Scopus search
 #'
 #' @param search_string (character vector of length 1) that is used for
 #'   querying PubMed (standard Scopus syntax, see reference for
@@ -6,11 +6,24 @@
 #' @param max_to_get Integer (>= 1): maximum number of records to
 #'   retrieve. Maximum 20000/week overall!
 #'
+#' @return an object of class `scopus`
+#'
+#' @seealso [create_bibliography].
+#'
+#' @export
+scopus_search <- function(search_string, max_to_get = 25) {
+    if (complete_search_works()) {
+        complete_scopus_search(search_string, max_to_get)
+    } else {
+        standard_scopus_search(search_string, max_to_get)
+    }
+}
+
+#' Complete Scopus search
+#'
+#' @describeIn scopus_search Complete Search
 #' @return an object of class `scopus-complete`
 #' @export
-#'
-#' @seealso [standard_scopus_search], [search_on_scopus],
-#'   [create_bibliography].
 #'
 #' @examples
 #' \dontrun{
@@ -53,13 +66,10 @@ complete_scopus_search <- function(search_string, max_to_get = 25) {
 
 #' Standard scopus search
 #'
-#' @inheritParams complete_scopus_search
+#' @describeIn scopus_search Complete Search
 #'
 #' @return an object of class `scopus-standard`
 #' @export
-#'
-#' @seealso [complete_scopus_search], [search_on_scopus],
-#'   [create_bibliography].
 #'
 #' @examples
 #' \dontrun{

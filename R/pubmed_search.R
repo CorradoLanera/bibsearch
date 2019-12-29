@@ -56,7 +56,7 @@ pubmed_search <- function(
     if (!n_records) {
         ui_warn("The search produced no result.")
         res <- list("0" = character(0L))
-        class(res) <- c("pubmed", class(res))
+        class(res) <- c("pubmed", "medline")
         return(res)
     }
 
@@ -80,7 +80,7 @@ pubmed_search <- function(
         res
     })
 
-    class(res) <- c("pubmed", class(res))
+    class(res) <- c("pubmed", "medline")
     ui_done("Search on PubMed completed")
     res
 

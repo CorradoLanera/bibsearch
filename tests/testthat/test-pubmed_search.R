@@ -22,12 +22,12 @@ test_that("return error on wrong inputs", {
 
 test_that("correct output", {
     expect_is(ok, "pubmed")
-    expect_is(ok, "list")
+    expect_is(ok, "medline")
     expect_equal(length(ok), 1)
     expect_named(ko[1])
 
     expect_is(ko, "pubmed")
-    expect_is(ko, "list")
+    expect_is(ko, "medline")
     expect_equal(length(ko), 1)
     expect_equal(length(ko[[1]]), 0)
     expect_named(ko[1])

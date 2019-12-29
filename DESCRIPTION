@@ -24,7 +24,9 @@ Imports:
     revtools,
     assertive,
     progress,
-    rscopus
+    rscopus,
+    glue,
+    stringr
 Suggests: 
     covr (>= 3.4.0),
     spelling (>= 2.1),

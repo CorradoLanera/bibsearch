@@ -30,11 +30,8 @@
 search_on_scopus <- function(search_string, max_to_get = 25) {
 
 # retrieve records ------------------------------------------------
-    retrieved_lists <- if (complete_search_works()) {
-        complete_scopus_search(search_string, max_to_get)
-    } else {
-        standard_scopus_search(search_string, max_to_get)
-    }
+    retrieved_lists <- scopus_search(search_string, max_to_get) %>%
+        medline_from_scopus()
 
 
 # Set-up the bibliography -----------------------------------------

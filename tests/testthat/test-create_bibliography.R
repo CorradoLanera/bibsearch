@@ -8,7 +8,7 @@ test_that("default works", {
 test_that("correct empty bibliography", {
     expect_is(
         suppressWarnings(
-            create_bibliography.pubmed(list("0" = character()))
+            create_bibliography.medline(list("0" = character()))
         ),
         "bibliography"
     )
