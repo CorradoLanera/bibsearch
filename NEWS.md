@@ -1,3 +1,10 @@
+* Refactored searches for PubMed and Scopus, added main tests
+
+* Updated `README`
+
+* Added `search_on_scopus()` to retrieve a bibliography from a search 
+  on Scopus, with option of select the amount of records to retrieve;
+
 # bibsearch 0.1.0
 
 * Removed teh dependency from the package **depigner** (because it is
