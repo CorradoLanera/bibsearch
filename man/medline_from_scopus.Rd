@@ -2,9 +2,15 @@
 % Please edit documentation in R/medline_from_scopus.R
 \name{medline_from_scopus}
 \alias{medline_from_scopus}
+\alias{medline_from_scopus.scopus_complete}
+\alias{medline_from_scopus.scopus_standard}
 \title{Convert Scopus search to medline format}
 \usage{
 medline_from_scopus(x)
+
+\method{medline_from_scopus}{scopus_complete}(x)
+
+\method{medline_from_scopus}{scopus_standard}(x)
 }
 \arguments{
 \item{x}{An object of class \code{scopus}}

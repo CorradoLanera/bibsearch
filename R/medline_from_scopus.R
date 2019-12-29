@@ -19,6 +19,11 @@ medline_from_scopus <- function(x) {
     UseMethod("medline_from_scopus", x)
 }
 
+
+
+
+#' @rdname medline_from_scopus
+#' @export
 medline_from_scopus.scopus_complete <- function(x) {
 
     contents <- x[["entries"]]
@@ -145,6 +150,123 @@ medline_from_scopus.scopus_complete <- function(x) {
 
 
 
+#' @rdname medline_from_scopus
+#' @export
 medline_from_scopus.scopus_standard <- function(x) {
-    NULL
+
+    contents <- x[["entries"]]
+
+    med <- purrr::map_chr(contents, function(self) {
+
+        # article ID (AID), source ID (SI)
+        aid <- self$eid
+        si <- self$`source-id`
+
+        # issn (IS)
+        is_link <- paste(self$`prism:issn`, "(Linking)")
+        is_e <- paste(self$`prism:eIssn`, "(Electronic)")
+
+        # date of pubblication (DP)
+        dp   <- self$`prism:coverDate`
+
+        # title
+        ti <- self$`dc:title`
+
+        # doi
+        lid <- self$`prism:doi`
+
+        # Other ID (OID)
+        split_title <- stringr::str_split(ti, " ")[[1]]
+        first <- split_title[[1]]
+        last  <- split_title[length(split_title)]
+        year  <- stringr::str_sub(dp, 1, 4)
+        au    <- self$`dc:creator`
+        first_auth_last_name <- stringr::str_extract(au, "\\S+")
+        oid   <- paste0(first_auth_last_name, year, first, last)
+        auid  <- ""
+
+
+        # abstract (AB)
+        ab <- ""
+
+        # Copyright informatyion (CI)
+        ci <- paste(
+            purrr::map_chr(self$affiliation, "affilname"),
+            collapse = "; "
+        )
+
+
+        # author (first only in STANDARD view)
+        authors_given   <- stringr::str_extract(au, "\\S+$")
+        authors_surname <- first_auth_last_name
+        fau <- paste(authors_surname, authors_given, sep = ", ")
+
+
+        # pages
+        pages <- self$`prism:pageRange`
+        if (is.null(pages)) {
+            if (!is.null(self$`prism:startingPage`) & !is.null(self$`prism:endingPage`)) {
+                pages <- paste0(self$`prism:startingPage`, "-", self$`prism:endingPage`)
+            } else {
+                pages <- "-"
+            }
+        }
+
+
+        make_names <- c(
+            "prism:publicationName", "prism:doi", "prism:volume",
+            "prism:issueIdentifier", "prism:aggregationType",
+            "subtypeDescription"
+        )
+        for (iname in make_names) {
+            if (is.null(self[[iname]])) {
+                self[[iname]] <- ""
+            }
+        }
+
+        # Publicetion type (PT)
+        pt <- paste(self$`prism:aggregationType`, self$subtypeDescription)
+
+
+        # Journal title (JT)
+        jt <- self$`prism:publicationName`
+
+        # keywords (OT)
+        ot <- ""
+
+        # source (SO)
+        so <- self$`prism:url`
+
+        # issue (IP) and volume (VI)
+        ip <- self$`prism:issueIdentifier`
+        vi <- self$`prism:volume`
+
+        med <- glue::glue("
+        PT  - {pt}
+        AID - {aid}
+        SI  - {si}
+        IS  - {is_link}
+        IS  - {is_e}
+        DP  - {dp}
+        TI  - {ti}
+        LID - {lid}
+        OID - {oid}
+        AB  - {ab}
+        CI  - {ci}
+        {paste(paste('AU  -', au), paste('FAU -', fau), paste('AUID-', auid), sep = '\\n', collapse = '\\n')}
+        JT  - {jt}
+        {paste('OT  -', ot, collapse = '\\n')}
+        SO  - {so}
+        IP  - {ip}
+        VI  - {vi}
+        PG  - {pages}
+
+        ")
+    })
+
+    med <- list(
+        "0" = purrr::flatten_chr(stringr::str_split(med, "\\n"))
+    )
+    class(med) <- c("medline")
+    med
 }
