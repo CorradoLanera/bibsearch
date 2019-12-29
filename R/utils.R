@@ -36,3 +36,16 @@ check_scopus_pat <- function() {
     invisible(TRUE)
 
 }
+
+
+complete_search_works <- function() {
+
+    tryCatch(
+        {
+            complete_scopus_search("a", 1)
+            TRUE
+        },
+        error = function(e) FALSE
+    )
+
+}

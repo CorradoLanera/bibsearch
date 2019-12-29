@@ -4,12 +4,7 @@
 \alias{search_on_scopus}
 \title{Perform a search on Scopus}
 \usage{
-search_on_scopus(
-  search_string,
-  max_to_get = 25,
-  batch_size = 25,
-  type_of_view = "STANDARD"
-)
+search_on_scopus(search_string, max_to_get = 25)
 }
 \arguments{
 \item{search_string}{(character vector of length 1) that is used for
@@ -18,13 +13,6 @@ details).}
 
 \item{max_to_get}{Integer (>= 1): maximum number of records to
 retrieve. Maximum 20000/week overall!}
-
-\item{batch_size}{Integer (>= 1): size of the batch of Scopus records
-to be retrieved at each time. Maximum is 200 for "STANDARD" type of
-search, and 25 for "COMPLETE" one.}
-
-\item{type_of_view}{(character vector of length 1) one of "STANDARD"
-or "COMPLETE", see reference for details.}
 }
 \value{
 An object of class
@@ -49,4 +37,8 @@ results of a query to
 \url{https://dev.elsevier.com/api_key_settings.html}
 
 \url{https://dev.elsevier.com/tecdoc_developer_faq.html}
+}
+\seealso{
+\link{standard_scopus_search}, \link{complete_scopus_search},
+\link{create_bibliography}.
 }
