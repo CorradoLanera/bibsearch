@@ -20,6 +20,11 @@ an object of class \code{scopus-standard}
 \description{
 Standard scopus search
 }
+\examples{
+\dontrun{
+    complete_scopus_search("machine learning", 1)
+}
+}
 \seealso{
 \link{complete_scopus_search}, \link{search_on_scopus},
 \link{create_bibliography}.

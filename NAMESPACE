@@ -2,6 +2,7 @@
 
 export("%>%")
 export(complete_scopus_search)
+export(create_bibliography)
 export(pubmed_search)
 export(search_on_pubmed)
 export(search_on_scopus)

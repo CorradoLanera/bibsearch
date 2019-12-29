@@ -21,9 +21,9 @@ an object of class \code{scopus-complete}
 Complete Scopus search
 }
 \examples{
-\dontrun(
+\dontrun{
     complete_scopus_search("machine learning", 1)
-)
+}
 }
 \seealso{
 \link{standard_scopus_search}, \link{search_on_scopus},

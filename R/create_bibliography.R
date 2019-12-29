@@ -1,8 +1,22 @@
+#' Create bibliography
+#'
+#' This function creates  \code{\link[revtools]{bibliography-class}}
+#' object. Methods are defined to manage sources of different types.
+#'
+#' @param retrieved_object Object output from a search. At the moment,
+#'   the only object managed by [create_bibliography] are `pubmed`,
+#'   and `scopus` (see **See also** section).
+#'
+#' @return An object of class \code{\link[revtools]{bibliography-class}}
+#' @export
+#'
+#' @seealso [search_on_pubmed], [search_on_scopus]
 create_bibliography <- function(retrieved_object) {
     UseMethod("create_bibliography", retrieved_object)
 }
 
 
+#' @rdname  create_bibliography
 create_bibliography.default <- function(retrieved_object) {
     obj_class <- class(retrieved_object)
     ui_stop(
@@ -12,6 +26,7 @@ this class is not managed by {ui_field('create_bibliography()')} yet."
 }
 
 
+#' @rdname create_bibliography
 create_bibliography.pubmed <- function(retrieved_object) {
 
     ui_todo("Set-up PubMed bibliography")

@@ -13,9 +13,9 @@
 #'   [create_bibliography].
 #'
 #' @examples
-#' \dontrun(
+#' \dontrun{
 #'     complete_scopus_search("machine learning", 1)
-#' )
+#' }
 complete_scopus_search <- function(search_string, max_to_get = 25) {
 
 # formal checks ---------------------------------------------------
@@ -62,6 +62,9 @@ complete_scopus_search <- function(search_string, max_to_get = 25) {
 #'   [create_bibliography].
 #'
 #' @examples
+#' \dontrun{
+#'     complete_scopus_search("machine learning", 1)
+#' }
 standard_scopus_search <- function(search_string, max_to_get = 25) {
 
 # formal checks ---------------------------------------------------
