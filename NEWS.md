@@ -1,3 +1,5 @@
+# bibsearch 0.2.0
+
 * Refactored searches for PubMed and Scopus, added main tests
 
 * Updated `README`
