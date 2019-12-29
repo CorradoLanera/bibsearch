@@ -43,10 +43,10 @@ Standard scopus search
 
 \examples{
 \dontrun{
-    complete_scopus_search("machine learning", 1)
+    complete_scopus_search("machine learning", 2)
 }
 \dontrun{
-    complete_scopus_search("machine learning", 1)
+    standard_scopus_search("machine learning", 2)
 }
 }
 \seealso{

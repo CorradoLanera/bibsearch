@@ -11,6 +11,9 @@
 #' @seealso [create_bibliography].
 #'
 #' @export
+#' \dontrun{
+#'     scopus_search("machine learning", 2)
+#' }
 scopus_search <- function(search_string, max_to_get = 25) {
     if (complete_search_works()) {
         complete_scopus_search(search_string, max_to_get)
@@ -27,7 +30,7 @@ scopus_search <- function(search_string, max_to_get = 25) {
 #'
 #' @examples
 #' \dontrun{
-#'     complete_scopus_search("machine learning", 1)
+#'     complete_scopus_search("machine learning", 2)
 #' }
 complete_scopus_search <- function(search_string, max_to_get = 25) {
 
@@ -73,7 +76,7 @@ complete_scopus_search <- function(search_string, max_to_get = 25) {
 #'
 #' @examples
 #' \dontrun{
-#'     complete_scopus_search("machine learning", 1)
+#'     standard_scopus_search("machine learning", 2)
 #' }
 standard_scopus_search <- function(search_string, max_to_get = 25) {
 
