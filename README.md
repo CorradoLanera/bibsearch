@@ -41,6 +41,9 @@ library(bibsearch)
 
 search_on_pubmed("(machine learning) AND lanera[Author]") %>% 
     write_bibliography()
+
+search_on_scopus("(machine learning) AND lanera[Author]") %>% 
+    write_bibliography()
 ```
 
 ## Code of Conduct
