@@ -1,3 +1,5 @@
+# bibsearch 0.2.1
+
 * Bug fix when empty doi is included in a retrieved record
 * Added some tests
 
