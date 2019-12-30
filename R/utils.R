@@ -44,7 +44,7 @@ complete_search_works <- function() {
 
     tryCatch(
         {
-            capture.output(complete_scopus_search("a", 1))
+            utils::capture.output(complete_scopus_search("a", 1))
             TRUE
         },
         error = function(e) FALSE
