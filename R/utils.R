@@ -44,10 +44,27 @@ complete_search_works <- function() {
 
     tryCatch(
         {
-            complete_scopus_search("a", 1)
+            capture.output(complete_scopus_search("a", 1))
             TRUE
         },
         error = function(e) FALSE
     )
 
+}
+
+
+
+
+fix_null_entries <- function(self) {
+    make_names <- c(
+        "prism:publicationName", "prism:doi", "prism:volume",
+        "prism:issueIdentifier", "prism:aggregationType",
+        "subtypeDescription"
+    )
+
+    for (iname in make_names) {
+        if (is.null(self[[iname]])) {self[[iname]] <- ""}
+    }
+
+    self
 }

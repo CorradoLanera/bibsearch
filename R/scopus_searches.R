@@ -11,6 +11,8 @@
 #' @seealso [create_bibliography].
 #'
 #' @export
+#'
+#' @examples
 #' \dontrun{
 #'     scopus_search("machine learning", 2)
 #' }

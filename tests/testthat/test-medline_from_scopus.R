@@ -59,3 +59,11 @@ test_that("Correct output", {
         )
     )
 })
+
+
+
+
+test_that("no error for null entries", {
+    empty_doi <- "ALL(machine AND learning) AND AUTHOR-NAME (lanera)"
+    expect_is(search_on_scopus(empty_doi), "bibliography")
+})
