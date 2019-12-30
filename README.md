@@ -39,11 +39,14 @@ This is a basic example which shows you how to solve a common problem:
 ``` r
 library(bibsearch)
 
-search_on_pubmed("(machine learning) AND lanera[Author]") %>% 
-    write_bibliography()
+pb_query <- "(machine learning) AND lanera[Author]"
+sc_query <- "ALL(machine AND learning) AND AUTHOR-NAME (lanera)"
 
-search_on_scopus("(machine learning) AND lanera[Author]") %>% 
-    write_bibliography()
+pb_res <- search_on_pubmed(pb_query)
+sc_res <- search_on_scopus(sc_query)
+
+write_bibliography(pb_res)                                         # RIS
+write_bibliography(sc_res, file_type = "bib")                   # BibTeX
 ```
 
 ## Code of Conduct
