@@ -29,12 +29,7 @@
 #' }
 search_on_scopus <- function(search_string, max_to_get = 25) {
 
-# retrieve records ------------------------------------------------
-    retrieved_lists <- scopus_search(search_string, max_to_get) %>%
-        medline_from_scopus()
-
-
-# Set-up the bibliography -----------------------------------------
+    retrieved_lists <- scopus_search(search_string, max_to_get)
     create_bibliography(retrieved_lists)
 
 }

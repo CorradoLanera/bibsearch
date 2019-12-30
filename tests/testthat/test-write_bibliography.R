@@ -32,7 +32,17 @@ write_bibliography(biblio_short, out_dir = out_dir, base_name = "foo")
 
 test_that("write files", {
     expect_true(write_bibliography(biblio_short, out_dir = out_dir))
+    expect_true(suppressWarnings(
+        write_bibliography(
+            biblio_short,
+            out_dir = file.path(out_dir, "foodir")
+        )
+    ))
     expect_true(fs::file_exists(file.path(out_dir, "exported.ris")))
+    expect_true(
+        fs::file_exists(file.path(out_dir, "foodir", "exported.ris"))
+    )
+
     expect_true(
         write_bibliography(biblio_short,
             out_dir = out_dir,

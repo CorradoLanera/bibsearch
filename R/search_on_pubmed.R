@@ -31,10 +31,7 @@ search_on_pubmed <- function(
     api_key = NULL
 ) {
 
-# retrieve records ------------------------------------------------
     retrieved_lists <- pubmed_search(search_string, max_to_get, api_key)
-
-# Set-up the bibliography -----------------------------------------
     create_bibliography(retrieved_lists)
 
 }
